@@ -1,45 +1,31 @@
+/**
+ * File Name: MainRouter.js
+ * Student’s Name: Toluwalase Fasoyin
+ * StudentID: 301359772
+ * Date: September 30th 2024
+ */
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from './Home'; // Import your Home component
-import About from './About'; // Import your About component
-import Projects from './Projects'; // Import your Projects component
-import Services from './Services'; // Import your Services component
-import Contact from './Contact'; // Import your Contact component
-import NotFound from './NotFound'; // Import your NotFound component
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
+import Services from './components/Services';
+import Contact from './components/Contact';
+import Layout from './components/Layout';
 
 const MainRouter = () => {
-    return (
-        <Router>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About Me</Link>
-                    </li>
-                    <li>
-                        <Link to="/projects">Projects</Link>
-                    </li>
-                    <li>
-                        <Link to="/services">Services</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact Me</Link>
-                    </li>
-                </ul>
-            </nav>
-
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/projects" component={Projects} />
-                <Route path="/services" component={Services} />
-                <Route path="/contact" component={Contact} />
-                <Route component={NotFound} /> {/* Fallback for 404 page */}
-            </Switch>
-        </Router>
-    );
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Layout>
+  );
 };
 
 export default MainRouter;
