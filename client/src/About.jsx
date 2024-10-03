@@ -11,7 +11,7 @@ function About() {
   return (
     <div className="about">
       <h2>About Me</h2>
-      <img src="./components/Project Image.jpeg" alt="My HeadShot" className="image-class" />
+      <img src="./components/Project Image.jpeg" alt="My HeadShot"  />
       <p>Hi, I'm Toluwalase Fasoyin. I'm a web developer with a passion for creating great applications...</p>
       <a href="./Toluwalase Fasoyin-Resume(1).pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
     </div>
